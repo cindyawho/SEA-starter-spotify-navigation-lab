@@ -11,7 +11,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Song"
+        initialRouteName="Home"
         screenOptions={{
           headerMode: 'screen',
           headerTintColor: 'white',

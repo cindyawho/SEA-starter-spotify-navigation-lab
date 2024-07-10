@@ -18,8 +18,6 @@ import {
     );
   };
 
-  // const navigation = useNavigation();
-  
   const Song = ({
     index,
     imageUrl,
@@ -27,9 +25,14 @@ import {
     songArtists,
     albumName,
     duration,
-  }) => {
+  }) => {  
+    const navigation = useNavigation();
+
     return (
-      <Pressable onPress={() => { console.log("Pressed " + songTitle) }}>
+      <Pressable onPress={() => { 
+        console.log("Pressed " + songTitle);
+        navigation.navigate("Song");
+      }}>
         <View style={styles.song}>
           <Text style={styles.index}>{index + 1}</Text>
           <Image
