@@ -42,7 +42,8 @@ import {
           {albumName}
         </Text>
         <Text style={[styles.duration]} numberOfLines={1}>
-          {millisToMinutesAndSeconds(duration)}
+          {/* {millisToMinutesAndSeconds(duration)} */}
+          {duration}
         </Text>
       </View>
     );

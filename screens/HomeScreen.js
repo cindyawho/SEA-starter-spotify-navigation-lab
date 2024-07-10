@@ -23,8 +23,11 @@ export default function HomeScreen({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={{color:"white"}}>Hello Spotify user!</Text>
       {contentDisplayed}
       <StatusBar style="auto" />
+      <Text style={{color:"white", fontSize:25, padding:10}}>Note: I do not use Spotify 😅</Text>
+      <Text style={{color:"white", fontSize:25, padding:10}}>How about you try using YouTube Music instead? :D</Text>
     </SafeAreaView>
   );
 }
