@@ -8,6 +8,7 @@ import {
   } from "react-native";
   import { Themes } from "../assets/Themes";
   import { millisToMinutesAndSeconds } from "../utils/millisToMinutesAndSeconds";
+  import { useNavigation } from '@react-navigation/native';
   
   const SongArtists = ({ SongArtists }) => {
     return (
@@ -16,6 +17,8 @@ import {
       </Text>
     );
   };
+
+  // const navigation = useNavigation();
   
   const Song = ({
     index,
@@ -26,7 +29,7 @@ import {
     duration,
   }) => {
     return (
-      <Pressable onPress={() => { console.log("Pressed!!") }}>
+      <Pressable onPress={() => { console.log("Pressed " + songTitle) }}>
         <View style={styles.song}>
           <Text style={styles.index}>{index + 1}</Text>
           <Image

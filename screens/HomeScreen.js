@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView, Text } from "react-native";
+import { StyleSheet, SafeAreaView, Text, Button } from "react-native";
 import { useSpotifyAuth } from "../utils";
 import { Themes } from "../assets/Themes";
 import SpotifyAuthButton from "../components/SpotifyAuthButton.js";
@@ -28,6 +28,10 @@ export default function HomeScreen({ navigation, route }) {
       <StatusBar style="auto" />
       <Text style={{color:"white", fontSize:25, padding:10}}>Note: I do not use Spotify 😅</Text>
       <Text style={{color:"white", fontSize:25, padding:10}}>How about you try using YouTube Music instead? :D</Text>
+      <Button
+        title="Go to Generic Song Screen"
+        onPress={() => navigation.navigate('Song')}
+      />
     </SafeAreaView>
   );
 }
