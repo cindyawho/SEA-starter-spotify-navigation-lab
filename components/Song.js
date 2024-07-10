@@ -12,7 +12,7 @@ import {
   const SongArtists = ({ SongArtists }) => {
     return (
       <Text style={styles.songArtists} numberOfLines={1}>
-        {SongArtists.map(({ name }) => `${name}`).join(", ")}
+        {SongArtists.map( ({ name }) => `${name}`).join(", ")}   
       </Text>
     );
   };
@@ -26,26 +26,28 @@ import {
     duration,
   }) => {
     return (
-      <View style={styles.song}>
-        <Text style={styles.index}>{index + 1}</Text>
-        <Image
-          style={[styles.image, styles.albumCover]}
-          source={{ uri: imageUrl }}
-        />
-        <View style={styles.songArtistContainer}>
-          <Text style={[styles.songTitle]} numberOfLines={1}>
-            {songTitle}
+      <Pressable onPress={() => { console.log("Pressed!!") }}>
+        <View style={styles.song}>
+          <Text style={styles.index}>{index + 1}</Text>
+          <Image
+            style={[styles.image, styles.albumCover]}
+            source={{ uri: imageUrl }}
+          />
+          <View style={styles.songArtistContainer}>
+            <Text style={[styles.songTitle]} numberOfLines={1}>
+              {songTitle}
+            </Text>
+            <SongArtists SongArtists={songArtists} />
+          </View>
+          <Text style={[styles.albumName]} numberOfLines={1}>
+            {albumName}
           </Text>
-          <SongArtists SongArtists={songArtists} />
+          <Text style={[styles.duration]} numberOfLines={1}>
+            {/* {millisToMinutesAndSeconds(duration)} */}
+            {duration}
+          </Text>
         </View>
-        <Text style={[styles.albumName]} numberOfLines={1}>
-          {albumName}
-        </Text>
-        <Text style={[styles.duration]} numberOfLines={1}>
-          {/* {millisToMinutesAndSeconds(duration)} */}
-          {duration}
-        </Text>
-      </View>
+      </Pressable>
     );
   };
   

@@ -17,7 +17,7 @@ import {
       songTitle={item.songTitle}
       songArtists={item.songArtists}
       albumName={item.albumName}
-      duration={item.duration}
+      duration={item.duration}                   
     />
   );
   
@@ -27,7 +27,7 @@ import {
         <FlatList
           data={tracks}
           renderItem={(item, index) => renderSong(item, index)}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.songTitle}
         />
       </View>
     );
