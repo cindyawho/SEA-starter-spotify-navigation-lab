@@ -27,11 +27,17 @@ import {
     duration,
   }) => {  
     const navigation = useNavigation();
-
     return (
       <Pressable onPress={() => { 
-        console.log("Pressed " + songTitle);
-        navigation.navigate("Song");
+        console.log("Pressed " + JSON.stringify(songArtists[0].name));
+        navigation.navigate("Song", {
+          index: index,
+          imageUrl: imageUrl,
+          songTitle: songTitle,
+          songArtists: songArtists,
+          albumName: albumName,
+          duration: duration}
+        );
       }}>
         <View style={styles.song}>
           <Text style={styles.index}>{index + 1}</Text>
