@@ -11,11 +11,13 @@ const { index,  imageUrl,  songTitle,  songArtists,  albumName,  duration  } = r
       <Image 
         style={styles.albumCover}
         source={{uri: imageUrl,}}/>
-      {/* <Text style={styles.songArtists}>By: {JSON.stringify(songArtists[0].name)}</Text> */}
-      <Text numberOfLines={1} style={styles.songArtists}>
+      {/* <Text numberOfLines={1} style={styles.songArtists}>
         {songArtists.map((artist, index) => 
           index===songArtists.length-1 ? artist.name : artist.name + ", "
         )}
+      </Text> */}
+      <Text numberOfLines={1} style={styles.songArtists}>
+        {songArtists.map( ({ name }) => `${name}`).join(", ")} 
       </Text>
       <Text style={styles.albumName}>Album: {albumName}</Text>
       {/* <Text style={styles.text}>Time: {duration/1000}</Text> */}
