@@ -1,5 +1,5 @@
 import { StyleSheet, SafeAreaView, Text, Image } from "react-native";
-import { Themes } from "../assets/Themes/index.js";
+import millisToMinutesAndSeconds from "../utils/millisToMinutesAndSeconds";
 
 export default function SongScreen({ navigation, route }) {
 
@@ -7,20 +7,15 @@ const { index,  imageUrl,  songTitle,  songArtists,  albumName,  duration  } = r
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.songTitle}>{songTitle}</Text>
       <Image 
         style={styles.albumCover}
         source={{uri: imageUrl,}}/>
-      {/* <Text numberOfLines={1} style={styles.songArtists}>
-        {songArtists.map((artist, index) => 
-          index===songArtists.length-1 ? artist.name : artist.name + ", "
-        )}
-      </Text> */}
+      <Text style={styles.songTitle}>{songTitle}</Text>
       <Text numberOfLines={1} style={styles.songArtists}>
         {songArtists.map( ({ name }) => `${name}`).join(", ")} 
       </Text>
       <Text style={styles.albumName}>Album: {albumName}</Text>
-      {/* <Text style={styles.text}>Time: {duration/1000}</Text> */}
+      <Text style={styles.duration}>{millisToMinutesAndSeconds(duration)}</Text>
     </SafeAreaView>
   );
 }
@@ -53,17 +48,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#666',
   },
-  // title: {
-  //   color: "white", 
-  //   fontSize: 30, 
-  //   fontFamily: "notoserif",
-  // }, 
-  // text: {
-  //   color: "white", 
-  //   fontSize: 20
-  // }, 
-  // picture: {
-  //   width: 200,
-  //   height: 200,
-  // },
 });
