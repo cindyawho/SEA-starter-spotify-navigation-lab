@@ -28,10 +28,10 @@ export default function HomeScreen({ navigation, route }) {
       <StatusBar style="auto" />
       <Text style={{color:"white", fontSize:25, padding:10}}>Note: I do not use Spotify 😅</Text>
       <Text style={{color:"white", fontSize:25, padding:10}}>How about you try using YouTube Music instead? :D</Text>
-      <Button
+      {/* <Button
         title="Go to Generic Song Screen"
         onPress={() => navigation.navigate('Song')}
-      />
+      /> */}
     </SafeAreaView>
   );
 }
